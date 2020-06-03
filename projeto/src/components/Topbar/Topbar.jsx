@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import './Topbar.scss'
+import Cart from '../Cartbuttom/Cart'
 import {ReactComponent as LogoSvg} from '../../assets/Fashionista_logo_small2.svg';
 const Topbar = () => {
     return (
@@ -17,11 +18,7 @@ const Topbar = () => {
              <i className="fa fa-search"/>
            </a>
           </button>  
-        <button className = "topbar__icon">
-          <a  to = "/newusers">
-            <i class="fa fa-shopping-cart"/>
-          </a>
-        </button>
+          <Cart/>
         </div>
      </div>
     </header>
