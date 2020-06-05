@@ -1,19 +1,21 @@
 import React, { useState,useEffect } from 'react';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
-import logo from './logo.svg';
 import './App.css';
 import Topbar from './components/Topbar/Topbar'
+import {BrowserRouter} from 'react-router-dom'
+import Routes from './routes/index'
+import {getTodos} from './action'
+import {useSelector,useDispatch} from "react-redux"
 const App = () => {
+  const dispath = useDispatch()
   return (
     <div className="App">
-      <Topbar/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+      <BrowserRouter>
+        <Topbar/>
+        <Routes/>
+      </BrowserRouter>
+       
 
-      </header>
     </div>
   );
 }
