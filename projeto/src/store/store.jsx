@@ -1,7 +1,7 @@
 import {createStore} from 'redux'
-import reducer from './reducers/catalag'
+import homeReducer from '../pages/Home/reducer'
 
 
-const store = createStore(reducer);
+const store = createStore(homeReducer);
 
 export default store

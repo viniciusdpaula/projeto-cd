@@ -1,0 +1,47 @@
+main .container{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    background-color:#fff;
+    background-clip:border-box;
+   }
+.card {
+    margin: 10px;
+    border:2px solid rgba(0,0,0,.125); 
+    box-shadow: black;
+    color: black;
+    background: white;
+    font-weight: bold;
+    padding: 5px 10px;
+}   
+.dale { 
+    display:flex;
+    flex-direction: column;
+    background: white;
+}
+.card img { 
+    margin-bottom: 50px;
+    max-width: none;
+    max-height: none;
+    height: 300px;
+    width: 300px;
+    display: block;
+    margin: auto;
+}
+.card-image{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+ }
+.discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    border-radius: 10px;
+    background: black;
+    color: white;
+
+}

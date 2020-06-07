@@ -4,7 +4,7 @@ import Cart from '../Cartbuttom/Cart'
 import {ReactComponent as LogoSvg} from '../../assets/Fashionista_logo_small2.svg';
 const Topbar = () => {
     return (
-    <header className = "topbar">
+    <nav className = "topbar">
       <div className = "container">
         <div>
           <a href = "/" className = "topbar__logo">
@@ -21,7 +21,7 @@ const Topbar = () => {
           <Cart/>
         </div>
      </div>
-    </header>
+    </nav>
     )
 }
 export default Topbar;

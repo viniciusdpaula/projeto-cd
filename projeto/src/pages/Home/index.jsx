@@ -2,14 +2,15 @@ import React, { useEffect } from 'react'
 import {useSelector,useDispatch} from 'react-redux';
 import fetchProducts from "../../api/api"
 import {getProducts,setLoading} from"./action"
-import Card from '../../components/Card'
-import CardFooter from '../../components/CardFooter'
-
+import Card from '../../components/Card/Card'
+import CardFooter from '../../components/CardFooter/CardFooter'
+import './index.scss'
 const Home = () => {
     console.log('2')
     const dispatch = useDispatch();
-    const {products} = useSelector(store => store)
+    const { products, loading} = useSelector(store => store)
     useEffect(() => {
+        console.log(loading)
         console.log('3')
         dispatch(setLoading());
         async function getProductsApi() {
@@ -21,24 +22,27 @@ const Home = () => {
         getProductsApi();
     },[dispatch])
     console.log(products,'7')
+    //console.log(products[0])
+    if (loading )
+    {
+        console.log('loading')
+        return( 
+        <p>
+             Loading
+        </p>
+        )
+    }    
     return (
-        <div>
-          {products.map(product =>  {
+       
+        <div className = "main">  
+          {products.length > 0 ? products.map(product =>  (     
             <Card 
-              img = {product.image}
-              name = {product.name}
-              style = { product.style}
-              discount_percentage = {product.discount_percentage}
-              sizes = {product.sizes}
-            >
-                <CardFooter 
-                 name = {product.name}
-                 actual_price = {product.actual_price}
-                 regular_price = { product.regular_price}
-                />
-            </Card> 
-            }
-            )}
+             product = {product}
+             /> 
+            )
+            )
+        : <p> deu ruim </p>
+        }
         </div>
     )
 }

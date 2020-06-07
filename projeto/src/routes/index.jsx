@@ -1,14 +1,14 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import StoreRoute from './StoreRoute/StoreRoute'
+import { Route, Switch, BrowserRouter} from 'react-router-dom';
+import Home from "../pages/Home/index"
 const Routes = () => (
-    <Switch>
-        <Route exact path = "/">
-            <StoreRoute/>
-        </Route>
-        <Route exact path = "/product/:id/:name">
-
-        </Route>
-    </Switch>
+    <BrowserRouter>
+     <Switch>
+         {console.log('1')}
+         <Route exact path = "/" component = {Home}/>
+         <Route exact path = "/product/:id/:name">
+         </Route>
+     </Switch>
+     </BrowserRouter> 
 )
 export default Routes;
