@@ -1,32 +1,23 @@
-main .container{
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    background-color:#fff;
-    background-clip:border-box;
-   }
+
 .card {
     margin: 10px;
     border:2px solid rgba(0,0,0,.125); 
     box-shadow: black;
     color: black;
     background: white;
-    font-weight: bold;
     padding: 5px 10px;
+    max-width: 20rem;
 }   
-.dale { 
-    display:flex;
-    flex-direction: column;
-    background: white;
-}
+
 .card img { 
     margin-bottom: 50px;
     max-width: none;
     max-height: none;
-    height: 300px;
+    height: 100%;
     width: 300px;
     display: block;
     margin: auto;
+    font-family: 'ROBOTO',sans-serif;
 }
 .card-image{
     overflow: hidden;
@@ -36,12 +27,57 @@ main .container{
     margin: 0 auto;
  }
 .discount {
+    font-size: 14px;
+    font-weight: bold;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 5px;
     width: 50px;
-    border-radius: 10px;
+    height: 50px;
+    border-radius: 50%;
     background: black;
     color: white;
+    line-height: 150%;
+    text-align: center;
+}
 
+.card-image i{ 
+    top: 10px;
+    right: 10px;    
+    position: absolute;
+    color: transparent;
+    font-size: 50px;
+}
+.card-image   i:hover{ 
+    color: black;
+    transition-duration:1.5s;
+    cursor: pointer;
+}
+.Footer { 
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.Footer__tittle { 
+    font-size: 15px;
+}
+.price {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    margin-top: 15px;
+}
+.regular__price { 
+    font-size: 13px;
+    margin: 5px 25px 0px 0px;
+    color: gray;
+    text-decoration: line-through;
+}
+.actual__price{
+    font-size: 20px;
+    font-weight: 700;
+}
+.installments{
+    color: gray;
+    font-size: 13px;
+    margin: 0px 25px 0px 10px;
 }

@@ -33,8 +33,8 @@ const Home = () => {
         )
     }    
     return (
-       
-        <div className = "main">  
+       <main className = "main">
+        <section className = "main__container">  
           {products.length > 0 ? products.map(product =>  (     
             <Card 
              product = {product}
@@ -43,7 +43,8 @@ const Home = () => {
             )
         : <p> deu ruim </p>
         }
-        </div>
+        </section>
+        </main>
     )
 }
 export default Home;

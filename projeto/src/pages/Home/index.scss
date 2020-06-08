@@ -1,5 +1,21 @@
 .main {
-display: flex;
-margin: 200px;
-flex-wrap: wrap;
+  padding-top:10rem ;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
  }
+ @media screen and (min-width: 1279px) {
+    .main {
+      max-width: 1279px;
+      margin-left: 25rem;
+    }
+  }
+.main__container { 
+   display:flex; 
+   flex-wrap: wrap;
+   width: 1279px;
+}   

@@ -1,6 +1,7 @@
+
 .topbar {
     backface-visibility: hidden;
-    background-color: white;
+    background-color: black;
     left: 0;
     padding: 10px 10px;
     position: fixed;
@@ -9,63 +10,79 @@
     z-index: 9000;
   }
 .topbar .container { 
-    display: flex;
-    justify-content: space-between;
-    width: 1000;
-    margin: 30px auto;
-}
-.topbar__group { 
-    display: flex;
-    justify-content: center;
-    margin-right: 100px;
-}
-.topbar__group input { 
-  background: transparent;
-  border: 1px solid #000000;
-  border-radius:5px
+  display: flex;
+  justify-content: space-between;
 }
 .topbar__logo { 
-    display: inline-block;
-    height: 40px;
-    margin: 0px;
+  display: inline-block;
+  height: 40px;
+  background-color: white;
+}
+.topbar__logo{
+  display: inline-block;
 }
 .topbar__logo svg {
-    height: 100%;
-    
-  }
+  height: 100%;
+}
+.topbar__group { 
+  display: flex;
+  justify-content: flex-end;
+}
+.input__topbar{
+   float: right; 
+   position:relative;
+}
+.topbar__group input { 
+    background: transparent;
+    border: 1px solid white;
+    border-radius:20px;
+    background-color: white;
+    width: 20rem;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+.input__topbar input[type = text] {
+   padding-left:40px;
+}
+.input__topbar {
+  position: relative;
+}
+.input__topbar i{
+  position: absolute;
+  left:0;
+  top:8px;
+  padding:4px 8px;
+  color:rgb(8, 8, 8);
+  font-size: 20px;
+}
   .topbar__icon,
   .topbar__icon a {
+    position: relative;
     border:none;
     border-radius: 10px;
     background:transparent;
-   text-decoration-style:none;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    //display: flex;
-    flex-direction: column;
+    color: white;
     font-size: 1.5rem;
     font-weight: normal;
-    justify-content: center;
     margin: auto 0.5rem;
-    transition: all 0.2s ease-in-out;
-  
+    transition: all 0.1 ease-in-out;  
 }  
 .topbar__icon {
   a {
     &:hover {
-      color: purple;
+      color:#b7b3b3;
       cursor: pointer;
     }
   }
 }
-
-@media screen and (min-width: 728px) {
-    .topbar__icon,
-    .topbar__icon a {
-      margin: auto 0.5rem;  
-    }
-  }
+      
 .container { 
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (min-width: 1279px) {
+  .container {
+    max-width: 1279px;
+  }
 }
