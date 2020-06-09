@@ -1,0 +1,35 @@
+.shopping-cart { 
+    padding-top:4rem;
+    width: 360px;
+    position: fixed; 
+    background-color:rgb(255, 255, 255);   
+    display: flex;   
+    flex-direction: column;      
+    right: 0px;   
+    height: 100%;
+}
+.shopping-cart__top { 
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.shopping-cart__close {
+    font-size: 1.3em;
+    color: rgb(0, 0, 0);
+    margin: auto;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    right: 315px;
+    padding: 10px;   
+}
+.title {
+    height: 60px;
+    border-bottom: 1px solid #E1E8EE;
+    padding: 10px 30px;
+    color: #5E6977;
+    font-size: 18px;
+    font-weight: 400;
+
+}

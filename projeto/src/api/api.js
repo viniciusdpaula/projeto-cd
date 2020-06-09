@@ -4,9 +4,8 @@ async function fetchProducts() {
     return  fetch(url)
     .then(response => response.json())
     .then((data) => { 
-        return data
+        return data       
     })
-    
 }
 
 export default fetchProducts

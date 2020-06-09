@@ -2,7 +2,7 @@ const INITIAL_STATE = {
     products: {},
     loading:false
 }
-export default function homeReducer(state  = INITIAL_STATE,action) { 
+export  function homeReducer(state  = INITIAL_STATE,action) { 
     switch (action.type) {
         case 'GET_PRODUCTS':{
           return {
@@ -20,3 +20,4 @@ export default function homeReducer(state  = INITIAL_STATE,action) {
           return state;
     }
 }
+export default homeReducer;

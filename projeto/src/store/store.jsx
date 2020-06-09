@@ -1,7 +1,6 @@
 import {createStore} from 'redux'
-import homeReducer from '../pages/Home/reducer'
-
-
-const store = createStore(homeReducer);
+import  reducers from './roootReducer'
+const reducer = reducers
+const store = createStore(reducer);
 
 export default store

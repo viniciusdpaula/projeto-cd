@@ -1,22 +1,30 @@
 import React, { useState,useEffect } from 'react';
 import './Topbar.scss'
-import Cart from '../Cartbuttom/Cart'
-import {ReactComponent as LogoSvg} from '../../assets/Fashionista_logo_small2.svg';
+import Cartbutton from '../Cartbuttom/Cartbutton'
 import { Link } from 'react-router-dom';
+import {searchUpdate} from'./action'
 const Topbar = () => {
+    const handleChange = (value) => {
+      searchUpdate(value)
+    }
     return (
     <nav className = "topbar">
       <div className = "container">
-          <Link to = "/" className = "topbar__logo">
-             <LogoSvg alt  = 'Logo'/>
+          <Link to = "/" className = "topbar__logo" >
+             <span>FASHIONISTA</span>
           </Link>
         <div className = "topbar__group">
-          <div className =  "input__topbar">
+          
             <i className="fa fa-search"/>
-            <input type = "text"placeholder = "O que você procura ?"/>
-          </div>   
-          <Cart/>
-        </div>
+            {/* <input  
+            type = "text"
+            className = "input__bar"
+            placeholder = "O que você procura ?"
+            onChange = {(e) => handleChange(e.target.value)}
+            /> */}
+         
+          <Cartbutton />
+        </div>  
       </div>
     </nav>
     )

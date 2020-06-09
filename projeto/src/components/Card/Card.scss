@@ -25,6 +25,9 @@
     width: 100%;
     height: auto;
     margin: 0 auto;
+    opacity: 1;
+    background-color: #333;
+    backface-visibility: hidden;
  }
 .discount {
     font-size: 14px;
@@ -52,10 +55,24 @@
     transition-duration:1.5s;
     cursor: pointer;
 }
+.card-image  img:hover { 
+    opacity: .6;
+   backface-visibility: visible;
+   background: black;
+   transition: .5s all;
+   cursor: pointer;
+   color:linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
+}
 .Footer { 
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    align-items: center;
+    text-decoration: none;
+}
+.LinkFooter { 
+    text-decoration: none;
+    
 }
 .Footer__tittle { 
     font-size: 15px;
@@ -65,10 +82,11 @@
     flex-direction: row;
     margin: 10px;
     margin-top: 15px;
+    justify-content: center;
 }
 .regular__price { 
     font-size: 13px;
-    margin: 5px 25px 0px 0px;
+    margin: 0.5rem;
     color: gray;
     text-decoration: line-through;
 }
@@ -81,3 +99,15 @@
     font-size: 13px;
     margin: 0px 25px 0px 10px;
 }
+.main__container { 
+    display:flex; 
+    flex-wrap: wrap;
+    width: 1279px;
+ }   
+ @media screen and (max-width:1279px ) {
+   .main__container { 
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+   }
+ }
