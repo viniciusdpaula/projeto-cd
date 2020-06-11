@@ -1,3 +1,4 @@
+//BEM CSS//
 .my-cart-badge { 
     font-size:15px;
     text-align: center;
@@ -9,12 +10,14 @@
     border: none;
     text-decoration: none;
   }
-  .topbar__cart i {
+  .topbar__icon--cart i {
     position: relative;
     margin: 4px;
+    border: none;
+    background: transparent;
   }  
 
-.topbar__cart :hover {
+.topbar__icon--cart:hover {
     color:#b7b3b3;
     cursor: pointer;
 } 

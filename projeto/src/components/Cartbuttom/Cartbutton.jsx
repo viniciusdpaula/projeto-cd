@@ -1,24 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Cartbutton.scss'
-import Cart from '../Cart/Cart'
 import {cartClick} from './action'
 import {useSelector,useDispatch} from 'react-redux';
 const Cartbutton = () => {
   const dispatch = useDispatch();
-  const {show} = useSelector(store => store.cartReducer)
-  console.log(show)
+  const {show,amount} = useSelector(store => store.cartReducer)
   const onClickCart = (e) => { 
     dispatch(cartClick(show))
   }    
   return (
     <button className = "topbar__icon" onClick = {(e) => onClickCart()}>
-      <a  className = "topbar__cart" >
+      <a  href = "#"className = "topbar__icon--cart" >
          <i className="fa fa-shopping-cart"/>
-         <span className="my-cart-badge">0</span>
+         <span className="my-cart-badge">{amount} </span>
       </a>
-      {/* {visible ?
-       <Cart  /> 
-      : null} */}
     </button>
   )}
 

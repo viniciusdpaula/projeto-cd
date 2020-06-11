@@ -2,8 +2,9 @@ import React from'react'
 import './Cart.scss'
 import {cartClick} from '../Cartbuttom/action'
 import {useSelector,useDispatch} from 'react-redux'; 
+import Cartitem from '../Cartitem /Cartitem'
 const Cart = () => { 
-  const {show} = useSelector(store => store.cartReducer)
+  const {show,amount,cart} = useSelector(store => store.cartReducer)
   const dispatch = useDispatch()  
   const close = () => { 
     dispatch(cartClick(show))
@@ -18,9 +19,13 @@ const Cart = () => {
            Shopping Bag
          </div>
        </div>
-       <div>
-        aaa
-       </div>            
+       {cart.map((item) => { 
+        return ( 
+        <Cartitem item = {item} />
+        )
+       }
+       )}
+            
     </div>
  )
 }

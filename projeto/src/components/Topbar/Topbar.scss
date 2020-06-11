@@ -1,17 +1,15 @@
-
+//BEM CSS//
 .topbar {
-    backface-visibility: hidden;
-    background-color: black;
-    left: 0;
-    padding: 10px 10px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 9000;
-  }
-.topbar .container { 
+  background-color: black;
+  padding: 10px 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 2000;
+}
+.topbar .topbar__container { 
   display: flex;
   justify-content: space-between;
+  margin-right: auto;
 }
 .topbar__logo { 
   display: inline-block;
@@ -22,20 +20,45 @@
   font-weight: 600;
   font-family: 'Roboto', Courier, monospace;
 }
-.topbar__logo{
-  display: inline-block;
-}
-.topbar__logo svg {
-  height: 100%;
-}
 .topbar__group { 
-  display: flex;
-  justify-content: flex-end;
-  font-size: 1.3em;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+  margin-right: 10rem;
 }
+  .topbar__icon,
+  .topbar__icon a  {
+  color: white;
+  position: relative;
+  border:none;
+  border-radius: 10px;
+  background:transparent;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin: auto 0.5rem;
+  transition: all 0.1 ease-in-out;  
+}  
+.topbar__icon  {
+    &:hover {
+      color:#b7b3b3;
+      cursor: pointer;
+    }
+  }
+@media screen and (max-width:768px) { 
+  .topbar__container  { 
+  display: flex;
+  flex-wrap: wrap;
+  }
+  .topbar__group { 
+    margin-right: auto;
+  }
+}
+
+
+// .topbar__group { 
+//   display: flex;
+//   font-size: 1.3em;
+//   align-content: center;
+//   justify-content: center;
+//   align-items: center;
+// }
 // .input__topbar{
 //    float: right; 
 //    position:relative;
@@ -55,58 +78,3 @@
 // .input__topbar {
 //   position: relative;
 // }
-.input__topbar i{
-  position: absolute;
-  padding:4px 8px;
-  color:rgb(255, 255, 255);
-  font-size: 1.3rem; 
-  margin: auto;
-}
-  .topbar__icon,
-  .topbar__icon a {
-    position: relative;
-    border:none;
-    border-radius: 10px;
-    background:transparent;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: normal;
-    margin: auto 0.5rem;
-    transition: all 0.1 ease-in-out;  
-}  
-.topbar__icon {
-  a {
-    &:hover {
-      color:#b7b3b3;
-      cursor: pointer;
-    }
-  }
-}
-      
-.container { 
-    display: flex;
-    align-items: center;
-}
-
-@media screen and (min-width: 1279px) {
-  .container {
-    max-width: 1279px;
-  }
-}
-@media screen and (max-width:768px) { 
-  .container { 
-  display: flex;
-  flex-wrap: wrap;
-  }
- .input__topbar { 
-   overflow: hidden;
-   width: 100%;
- }
- .input__topbar input { 
-   width: 100%;
- }
- 
- .topbar__group { 
-   margin: 0.5rem;
- } 
-}

@@ -1,12 +1,11 @@
 import React from 'react';
-import { Route, Switch, BrowserRouter} from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import Home from "../pages/Home/index"
+import Product from "../pages/Product/Product"
 const Routes = () => (
      <Switch>
-         {console.log('1')}
          <Route exact path = "/" component = {Home}/>
-         <Route exact path = "/product/:id/:name">
-         </Route>
+         <Route  path = "/product/:style" component = {Product}/>
      </Switch>
 )
 export default Routes;

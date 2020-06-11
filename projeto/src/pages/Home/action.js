@@ -1,6 +1,7 @@
 export function setLoading(){
     return {
-        type: 'LOADING'
+        type: 'LOADING',
+        payload:true
     };
 }
 export function getProducts(products){

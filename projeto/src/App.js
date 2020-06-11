@@ -1,5 +1,5 @@
-import React, { useState,useEffect } from 'react';
-import './App.css';
+import React, {useEffect } from 'react';
+import './App.scss';
 import {useSelector,useDispatch} from 'react-redux';
 import Topbar from './components/Topbar/Topbar'
 import Routes from './routes/index'
@@ -8,7 +8,6 @@ import fetchProducts from "./api/api"
 import {getProducts,setLoading} from './pages/Home/action'
 const App = () => {
   const dispatch = useDispatch();
-  const { products, loading} = useSelector(store => store.homeReducer)
   useEffect(() => {
       dispatch(setLoading());
       async function getProductsApi() {
@@ -17,13 +16,13 @@ const App = () => {
       }
       getProductsApi();
   },[dispatch])
+  const { loading} = useSelector(store => store.homeReducer) 
   if (loading )
   {
-    console.log('loading')
     return( 
       <p>Loading</p>
     )
-  } 
+  }
   return (
     <div className="App">
       <BrowserRouter>
