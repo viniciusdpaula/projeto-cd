@@ -63,39 +63,3 @@
    cursor: pointer;
    color:linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
 }
-.Footer { 
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    align-items: center;
-    text-decoration: none;
-}
-.LinkFooter { 
-    text-decoration: none;
-    
-}
-.item__tittle--footer { 
-    font-size: 15px;
-}
-.price {
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-    margin-top: 15px;
-    justify-content: center;
-}
-// .regular__price { 
-//     font-size: 13px;
-//     margin: 0.5rem;
-//     color: gray;
-//     text-decoration: line-through;
-// }
-.actual__price{
-    font-size: 20px;
-    font-weight: 700;
-}
-.installments{
-    color: gray;
-    font-size: 13px;
-    margin: 0px 25px 0px 10px;
-}

@@ -1,23 +1,7 @@
-//BEM CSS//
+
 .my-cart-badge { 
     font-size:15px;
-    text-align: center;
     position : absolute;
-    line-height: normal;
-    letter-spacing:-0.50px;
-    font-weight: 700;
-    transition: all 0.2s ease-in-out;    
-    border: none;
-    text-decoration: none;
+    font-weight: 700; 
+    margin-left: 0.3em;
   }
-  .topbar__icon--cart i {
-    position: relative;
-    margin: 4px;
-    border: none;
-    background: transparent;
-  }  
-
-.topbar__icon--cart:hover {
-    color:#b7b3b3;
-    cursor: pointer;
-} 

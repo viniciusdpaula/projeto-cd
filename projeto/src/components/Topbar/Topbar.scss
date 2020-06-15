@@ -1,80 +1,51 @@
-//BEM CSS//
-.topbar {
-  background-color: black;
-  padding: 10px 10px;
-  position: fixed;
-  width: 100%;
-  z-index: 2000;
+body {
+  .topbar  { 
+    color: white;
+    background-color:black;
+    padding: 10px 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 2000;
+  
+
+    &__logo { 
+      display: inline-block;
+      height: 40px;
+      color:white;
+      text-decoration: none;
+      font-size: 2rem;
+      font-weight: 600;    
+    }
+    &__icon { 
+      color: white;
+      position: relative;
+      font-size: 1.5rem;
+        & a{
+          color:white;
+        }
+        & :hover { 
+          color:#9d9d9d;
+          transition: all 0.2s ease-in-out
+        }
+    }
+  }
 }
+
 .topbar .topbar__container { 
   display: flex;
   justify-content: space-between;
   margin-right: auto;
-}
-.topbar__logo { 
-  display: inline-block;
-  height: 40px;
-  color: white;
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: 600;
-  font-family: 'Roboto', Courier, monospace;
+  align-items: center;
 }
 .topbar__group { 
   margin-right: 10rem;
 }
-  .topbar__icon,
-  .topbar__icon a  {
-  color: white;
-  position: relative;
-  border:none;
-  border-radius: 10px;
-  background:transparent;
-  font-size: 1.5rem;
-  font-weight: normal;
-  margin: auto 0.5rem;
-  transition: all 0.1 ease-in-out;  
-}  
-.topbar__icon  {
-    &:hover {
-      color:#b7b3b3;
-      cursor: pointer;
-    }
-  }
+
 @media screen and (max-width:768px) { 
   .topbar__container  { 
-  display: flex;
   flex-wrap: wrap;
   }
   .topbar__group { 
     margin-right: auto;
   }
 }
-
-
-// .topbar__group { 
-//   display: flex;
-//   font-size: 1.3em;
-//   align-content: center;
-//   justify-content: center;
-//   align-items: center;
-// }
-// .input__topbar{
-//    float: right; 
-//    position:relative;
-// }
-// .topbar__group input { 
-//     background: transparent;
-//     border: 1px solid white;
-//     border-radius:20px;
-//     background-color: white;
-//     width: 20rem;
-//     padding: 10px;
-//     font-size: 1.1rem;
-// }
-// .input__topbar input[type = text] {
-//    padding-left:40px;
-// }
-// .input__topbar {
-//   position: relative;
-// }

@@ -1,13 +1,14 @@
-import {homeReducer} from '../pages/Home/reducer'
-import {searchReducer} from '../components/Topbar/reducer'
-import {cartReducer} from '../components/Cartbuttom/reducer'
+import {homeReducer} from './reducers/homeReducer/reducer'
+import {searchReducer} from './reducers/Navreducers/reducer'
+import {cartReducer} from './reducers/cartReducer/reducer'
 import {combineReducers} from 'redux'
 import {productReducer} from './reducers/product/productReducer'
-const reducers = combineReducers({
+
+export const reducers = combineReducers({
     homeReducer,
     searchReducer,
     cartReducer,
     productReducer
 });
 
-export default reducers;
+export default {reducers};

@@ -9,4 +9,10 @@ export function getProducts(products){
         type: 'GET_PRODUCTS',
         payload: products
     }
-}
+}    
+export function searchValue(name) { 
+    return { 
+        type: 'SEARCH_UPDATE',
+        payload:name
+    }
+}    

@@ -9,11 +9,10 @@
     justify-content: center;
   }
   &__info {
+    margin:2rem auto ;
     display: flex;
     flex-direction: column;
-    margin: auto;
-    height: 100%;
-  
+
     &__tittle {
       font-weight: 500;
       font-size: 1.5rem;
@@ -21,10 +20,17 @@
     &__discount_percentage { 
       background: black;
       color: white;
-      width: 50px;
-      margin:2rem auto 1rem 0.5rem;
+      margin:0 auto auto 0;
+      font-size: 21px;
+      padding: 1rem;
     }
-  }
+    &--buy { 
+      display: flex;
+      margin: 4rem auto 4rem 1rem;
+       & span { 
+        margin: auto 2rem auto 0;
+       } 
+    }
   &__price{ 
     margin-top: 15px;
 
@@ -35,64 +41,64 @@
         margin: 0.5rem;
       }
       &--actual {
-        font-size: 30px;
+        font-size: 1.5em;
       }
       &--mod { 
         display: flex;
       }
   }
+ 
+} 
+  &__buttom { 
+    cursor: pointer;
+    background:black;
+    color:white;
+    width: 100%;
+    height: 70px;
+    font-size: 30px;   
+    margin: auto;     
+  }
   &__sizes { 
     display: flex;
-    margin: 1.5rem; 
-    font-size: 13px;
+    margin: 2rem; 
     justify-content: center;
-  }  
-  &__size{ 
+    &__size { 
     border: 1px solid black;
-    width: 50px; 
-    margin: 0.5rem;
-    height: 40px;
-    background: white;
-    cursor:pointer;
-    text-decoration: none; 
-  
-    &--selected { 
-      color:white;
-      background:black;
-      border: 1px solid black;
-      width: 50px; 
-      margin: 0.5rem;
-      height: 40px;
-      cursor:pointer;
-      text-decoration: none;       
+    text-decoration: none;       
+    margin: 0.5em;
+      &--selected { 
+        background: black;
+        color: white;
       }
-  } 
+    }  
+  }
+ 
 }
-@media screen and (max-width) { 
-  .product__container { 
-  width: 100%}
+@media screen and (max-width : 720px) { 
+  .product{
+    &__container { 
+      width: 100%;
+      height: 100%;
+    }
+    &__info { 
+      margin:0;
+    }
+    &__image { 
+      width: 100%;
+    }
+  }
 }
-.item__amount--buy { 
-  margin: 4rem auto auto 1rem;
-  display: flex;   
- }
- .item__amount--buy span { 
-  margin: auto 2rem auto 0;
- }
+
  .item__amount__buttons { 
   font-size: 30px;
   align-items: center; 
   display: flex;
+
+  & i { 
+   cursor: pointer;
  }
- .item__amount__buttons input { 
+  & input { 
   width: 50px;
   margin: 1.5rem;
  }
-.buy__button { 
-  border: none;
-  background:black;
-  color:white;
-  width: 100%;
-  height: 70px;
-  font-size: 30px;
-}
+} 

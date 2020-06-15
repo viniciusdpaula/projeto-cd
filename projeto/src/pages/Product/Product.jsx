@@ -1,69 +1,63 @@
+import {getUrl} from '../../utils/getUrl'
 import React, { useEffect, useState } from 'react'
 import './Product.scss'
 import {useSelector,useDispatch} from 'react-redux'
-import {getProduct,addtoCart} from './action'
-import Cart from '../../components/Cart/Cart'
+import {getProduct,addtoCart,setUrl} from '../../store/reducers/product/action'
 import Sizesbuttom from '../../components/Sizebuttom/Sizebuttom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faCartPlus,faPlusSquare,faMinusSquare} from "@fortawesome/free-solid-svg-icons"
+import Loading from '../../components/Loading/Loading'
+
+
 const Product = () => { 
-    const [sizesAux,setSizesAux] = useState({})
-    const [hasSelected,sethasSelected] = useState(false)
-    const {show} =useSelector(store => store.cartReducer)
-    const {size} = useSelector(store => store.productReducer)
+    const [amount,setAmount] = useState(1)
+    const {size,url2} = useSelector(store => store.productReducer)
     const dispatch = useDispatch();
     const [load,setLoad] = useState(true)
-    const [url] = useState( () =>{
-        const {pathname} = window.location
-        const param = pathname.split("/")[2]
-        return param
-    })
     const {SingleProduct} = useSelector(store => store.homeReducer)
+    const url = getUrl(window.location)
     useEffect(() => {
             function setAction(){           
              dispatch(getProduct(url))            
         }
         setAction() 
-        
-    },[dispatch])
-    function addCart(e,SingleProduct){
+        setLoad(false)
+    },[dispatch,url])
+    function addCart(e,SingleProduct,amount){
          e.preventDefault()
           if (size !== "" ) { 
-              dispatch((addtoCart(SingleProduct,size)))
+              dispatch((addtoCart(SingleProduct,size,amount)))
               console.log('COMPRA REALIZADA')
          }
         else   { 
             console.log('escolha um tamanho')
          }
-        }
-     useEffect(() => { 
-         if (SingleProduct != undefined && SingleProduct.sizes != undefined ){
-         var sizesObj = SingleProduct.sizes.filter((sizes) => { 
-             return sizes.available
-         })
-         setLoad(false)
-         setSizesAux(sizesObj)
-     }
-    },[SingleProduct,hasSelected])
+    }
     if (load) { 
-
         return (
             <p> dale</p>
         )
     }
+    function changeAmount(e,value) {
+        if (value === 'minus' && amount > 1) {
+           setAmount(amount - 1) 
+        }   
+        else if  (value === 'plus') { 
+          setAmount(amount + 1)   
+        }  
+    }
     return (
-        <section className = "main">
-            {SingleProduct !== undefined  && 
-            show ?  
-              <div id="overlay"> <Cart/> </div> 
-            : <div id="overlay--rest"/> }               
+        <section className = "main">  
+        {SingleProduct != undefined  ?      
                 <div className = "main product__container">
-                    <img src = {SingleProduct.image} alt = "product"/>
-                    <div className = "main product__info">
+                    <img src = {SingleProduct.image} alt = "product" className = "product__image"/>
+                    <div className = "product__info">
                         <p className = "product__info__tittle">{SingleProduct.name} </p>
                         {SingleProduct.on_sale ?
                         <span className = "product__info__discount_percentage">
                             {SingleProduct.discount_percentage} 
                         </span> : null }
-                        <div className = "product__price">
+                        <div className = "product__info">
                             <div className = "product__price--mod">
                                 {SingleProduct.on_sale ?
                               <span className = "product__price--regular">
@@ -77,24 +71,27 @@ const Product = () => {
                                 {SingleProduct.installments} 
                             </span>
                         </div>
-                        <div className = "product__sizes">
-                           <Sizesbuttom single_product = {SingleProduct.sizes} />
-                        </div>
-                        <div className ="item__amount--buy ">
+                        <Sizesbuttom />
+                        <div className ="product__info--buy ">
                           <span>Quantidade: </span>
                           <div className = "item__amount__buttons">
-                          <i className="fa fa-plus-square"></i>
-                           <input placeholder = "1"/>
-                          <i className="fa fa-minus-square"></i>
+                          <FontAwesomeIcon icon ={faMinusSquare} 
+                          onClick = {(e) => changeAmount(e,'minus')}
+                          />
+
+                           <input placeholder = {amount} />
+                          <FontAwesomeIcon icon ={faPlusSquare} 
+                           onClick = {(e) => changeAmount(e,'plus')}
+                          />
                           </div>
                         </div>
-                        <button className = "buy__button" 
-                        onClick = {(e) => addCart(e,SingleProduct)}>
-                          <i className="fa fa-cart-plus"></i>
+                        <button className = "product__buttom" 
+                        onClick = {(e) => addCart(e,SingleProduct,amount)}>
+                          <FontAwesomeIcon icon ={faCartPlus}/>
                         </button> 
                     </div>                   
                 </div>
-            }
+            :  <Loading/>}  
         </section>  
     )   
 }

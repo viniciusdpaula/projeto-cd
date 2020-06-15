@@ -1,10 +1,10 @@
-import {filterByCode} from '../../utils/filterByCode'
+import {filterByCode,findItem,findSizes} from '../../../utils/filters'
 const INITIAL_STATE = {
     products: {},
     loading:false,
     SingleProduct:{},
-    sizes: []
-
+    sizes: [],
+    search_array:[]
 }
 export   function homeReducer(state  = INITIAL_STATE,action) { 
     switch (action.type) {
@@ -22,12 +22,18 @@ export   function homeReducer(state  = INITIAL_STATE,action) {
         }
         case 'GET_PRODUCT_INFO': {
             const single = filterByCode(state.products,action.payload)  
-            const single_sizes = single.sizes
             return { 
                 ...state,
                 SingleProduct:single,
-                sizes:single_sizes
+                sizes: findSizes(single)
             }
+        }
+        case 'SEARCH_UPDATE': { 
+           const findArray = findItem(state.products,action.payload)
+           return { 
+               ...state,
+               search_array:findArray
+           }
         }
         default:
           return state;

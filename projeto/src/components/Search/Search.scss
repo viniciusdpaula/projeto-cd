@@ -1,0 +1,16 @@
+
+.search { 
+    padding-top: 6em;
+}
+.search input { 
+    border-radius: 10px;
+    border:0.5px solid black;
+    height: 2rem;
+    width:70%;
+    margin: 2rem auto auto 3rem;
+    padding: 15px;
+    &:focus { 
+    height: 2rem;
+    width:70%;
+    }
+}

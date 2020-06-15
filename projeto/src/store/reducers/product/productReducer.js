@@ -1,7 +1,8 @@
 
 
 const INITIAL_STATE = {
-    size : ""
+    size : "",
+    url:""
 }
 export   function productReducer(state  = INITIAL_STATE,action) { 
     switch (action.type) {
@@ -10,6 +11,12 @@ export   function productReducer(state  = INITIAL_STATE,action) {
                 ...state,
                 size : action.payload
             }
+        }
+        case 'SET_URL' :{ 
+             return { 
+                 ...state,
+                 url:action.payload
+             }
         }
         default:
           return state;
