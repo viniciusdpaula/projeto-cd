@@ -2,7 +2,7 @@ import {getUrl} from '../../utils/getUrl'
 import React, { useEffect, useState } from 'react'
 import './Product.scss'
 import {useSelector,useDispatch} from 'react-redux'
-import {getProduct,addtoCart,setUrl} from '../../store/reducers/product/action'
+import {getProduct,addtoCart} from '../../store/reducers/product/action'
 import Sizesbuttom from '../../components/Sizebuttom/Sizebuttom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCartPlus,faPlusSquare,faMinusSquare} from "@fortawesome/free-solid-svg-icons"
@@ -11,7 +11,7 @@ import Loading from '../../components/Loading/Loading'
 
 const Product = () => { 
     const [amount,setAmount] = useState(1)
-    const {size,url2} = useSelector(store => store.productReducer)
+    const {size} = useSelector(store => store.productReducer)
     const dispatch = useDispatch();
     const [load,setLoad] = useState(true)
     const {SingleProduct} = useSelector(store => store.homeReducer)

@@ -1,4 +1,4 @@
-const css = `
+export const css = `
 .react-spinner-material {
   width: 80px;
   height: 80px;
@@ -73,3 +73,6 @@ const ID = 'spinner_id_style';
     }
   }
 })();
+
+
+export default css

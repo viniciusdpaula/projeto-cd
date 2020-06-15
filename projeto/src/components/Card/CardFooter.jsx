@@ -1,18 +1,18 @@
 import React from 'react'
 
 
-const CardFooter = () => {
+const CardFooter = ({name,on_sale,regular_price,actual_price,installments}) => (
     <div className = "card__Footer">
-    <span className = "item__tittle--footer"> {product.name}</span>
+    <span className = "item__tittle--footer"> {name}</span>
     <div className = 'price'> 
-       {product.on_sale &&  
+       {on_sale &&  
        <span className = "regular__price">
-          {product.regular_price}
+          {regular_price}
        </span>
        }
-      <span className = "actual__price--mod"> {product.actual_price} </span>
+      <span className = "actual__price--mod"> {actual_price} </span>
     </div>  
-    <span className = "installments">{product.installments} </span>            
+    <span className = "installments">{installments} </span>            
  </div>
-}
+)
 export default CardFooter
