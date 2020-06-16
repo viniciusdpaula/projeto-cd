@@ -3,7 +3,7 @@ import './Topbar.scss'
 import Cartbutton from '../Cartbuttom/Cartbutton'
 import { Link } from 'react-router-dom';
 import {setSearch} from'../../store/reducers/Navreducers/action'
-import {useSelector,useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from "@fortawesome/free-solid-svg-icons"
 

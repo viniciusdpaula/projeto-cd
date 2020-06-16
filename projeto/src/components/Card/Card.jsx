@@ -6,7 +6,7 @@ const Card = ({product}) => {
   return (        
        <div className = "card">
           <div className = "card__image">
-             <Link to = {`/product/${product.code_color}`}>
+             <Link to = {`/product/${product.code_color}`} >
               {product.image.length > 0 ?
                 <img className = "card__image-wraper"src = {product.image} alt = "product"/>
                 : <img src = 'https://dummyimage.com/300x379.15/ffffff/f7f7f7.png&text=/' alt = "holder"/>

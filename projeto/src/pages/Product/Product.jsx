@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import './Product.scss'
 import {useSelector,useDispatch} from 'react-redux'
 import {getProduct,addtoCart} from '../../store/reducers/product/action'
-import Sizesbuttom from '../../components/Sizebuttom/Sizebuttom'
+import Sizesbuttom from '../../components/Sizebutton/Sizebutton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCartPlus,faPlusSquare,faMinusSquare} from "@fortawesome/free-solid-svg-icons"
 import Loading from '../../components/Loading/Loading'
@@ -75,6 +75,7 @@ const Product = () => {
                         <div className ="product__info--buy ">
                           <span>Quantidade: </span>
                           <div className = "item__amount__buttons">
+                          
                           <FontAwesomeIcon icon ={faMinusSquare} 
                           onClick = {(e) => changeAmount(e,'minus')}
                           />

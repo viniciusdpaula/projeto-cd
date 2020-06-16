@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react'
-//import './Sizebuttom.scss'
+//CSS EM PRODUCT.SCSS
 import {setSize} from '../../store/reducers/product/action'
 import {useSelector,useDispatch} from 'react-redux'
 const Sizebuttom = () => {

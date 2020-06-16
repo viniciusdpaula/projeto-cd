@@ -1,8 +1,6 @@
 import React from 'react'
 import {useSelector} from 'react-redux';
-import Card from '../../components/Card/Card'
-import Cart from '../../components/Cart/Cart';
-
+import {Card} from '../../components/index'
 
 const Home = () => {
     const { products} = useSelector(store => store.homeReducer);  

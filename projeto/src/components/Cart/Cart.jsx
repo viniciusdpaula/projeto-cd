@@ -37,11 +37,11 @@ const Cart = () => {
           }
           )
           }
-            <div className = "cart__buttons--finish" onClick = {(e) => setDeleteAll()}>
-              <span> TOTAL: R$ {subtotal}</span>
-            </div>
           </div>
         </div>  
+        <div className = "cart__buttons--finish" onClick = {(e) => setDeleteAll()}>
+              <span> TOTAL: R$ {subtotal}</span>
+        </div>
     </div>
   )
 }

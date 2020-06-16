@@ -17,11 +17,11 @@ const Cartitem = ({item,id}) => {
 
     return (
       <div className = "item">
-        <div className ="item__image">
-          <img src = {item.image} alt = "holder"/>
           <div className = "item--delete" onClick = {(e) => setDelete(e)}>
           <FontAwesomeIcon icon ={faTrash}  />  
-        </div>
+          </div>
+        <div className ="item__image">
+          <img src = {item.image} alt = "holder"/>
         </div>
         <div className = "item__info">
           <span className = "item__info--name">{item.name}</span>

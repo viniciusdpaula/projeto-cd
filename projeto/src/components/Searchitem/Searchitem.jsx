@@ -12,7 +12,8 @@ export const Searchitem = ({item}) => {
     <Link to = {`/product/${item.code_color}`} className = "search__item" 
     onClick ={(e) => handleAction(e)} >
         <div className ="search__item__image">
-          <img src = {item.image} alt = "holder"/>
+           {item.image ?   <img className = "card__image-wraper"src = {item.image} alt = "product"/>
+            :<img src = 'https://dummyimage.com/300x379.15/ffffff/f7f7f7.png&text=/' alt = "holder"/>}
         </div>
         <div className = "search__item__info">
           <span className = "search__item__info__name">{item.name}</span>

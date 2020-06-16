@@ -4,26 +4,28 @@
     margin-top: 20px;
     align-items: center;
     text-decoration: none;
-}
-.LinkFooter { 
-    text-decoration: none;
-    
-}
-.item__tittle--footer { 
-    font-size: 15px;
-}
-.price {
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-    margin-top: 15px;
-    justify-content: center;
+    &__tittle { 
+        margin: auto;
+    }
+    &__price { 
+        display: flex;
+        flex-direction: row;
+        margin: 1rem;
+        margin-top: 15px;
+        justify-content: center;
+        align-items: center;
+        &__actual {
+            font-size: 20px;
+            margin:1rem;
+            font-weight: 600;
+        }
+        &__regular { 
+            color: gray;
+            text-decoration: line-through;;;
+        }
+    }
 }
 
-.actual__price{
-    font-size: 20px;
-    font-weight: 700;
-}
 .installments{
     color: gray;
     font-size: 13px;

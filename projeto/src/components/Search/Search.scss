@@ -1,16 +1,23 @@
 
 .search { 
     padding-top: 6em;
-}
-.search input { 
-    border-radius: 10px;
-    border:0.5px solid black;
-    height: 2rem;
-    width:70%;
-    margin: 2rem auto auto 3rem;
-    padding: 15px;
-    &:focus { 
-    height: 2rem;
-    width:70%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    border-bottom: 1px solid #E1E8EE;    
+    color: black;
+    flex-direction: column; 
+    overflow-y: auto;
+    input { 
+        border-radius: 10px;
+        border:0.5px solid black;
+        height: 2rem;
+        width:70%;
+        margin: 2rem auto 1rem 3rem;
+        padding: 15px;
+    }
+    &__content { 
+      width: auto;
     }
 }
