@@ -1,4 +1,4 @@
-import {getUrl} from '../../utils/getUrl'
+
 import React, { useEffect, useState } from 'react'
 import './Product.scss'
 import {useSelector,useDispatch} from 'react-redux'
@@ -7,21 +7,19 @@ import Sizesbuttom from '../../components/Sizebutton/Sizebutton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCartPlus,faPlusSquare,faMinusSquare} from "@fortawesome/free-solid-svg-icons"
 import Loading from '../../components/Loading/Loading'
-
+import {useRouteMatch} from 'react-router-dom'
 
 const Product = () => { 
     const [amount,setAmount] = useState(1)
     const {size} = useSelector(store => store.productReducer)
     const dispatch = useDispatch();
-    const [load,setLoad] = useState(true)
     const {SingleProduct} = useSelector(store => store.homeReducer)
-    const url = getUrl(window.location)
+    const url = useRouteMatch().params.style
     useEffect(() => {
             function setAction(){           
              dispatch(getProduct(url))            
         }
         setAction() 
-        setLoad(false)
     },[dispatch,url])
     function addCart(e,SingleProduct,amount){
          e.preventDefault()
@@ -33,11 +31,6 @@ const Product = () => {
             console.log('escolha um tamanho')
          }
     }
-    if (load) { 
-        return (
-            <p> dale</p>
-        )
-    }
     function changeAmount(e,value) {
         if (value === 'minus' && amount > 1) {
            setAmount(amount - 1) 
@@ -48,9 +41,12 @@ const Product = () => {
     }
     return (
         <section className = "main">  
-        {SingleProduct != undefined  ?      
+        {SingleProduct !== undefined  ?      
                 <div className = "main product__container">
-                    <img src = {SingleProduct.image} alt = "product" className = "product__image"/>
+                 {SingleProduct.image.length > 0 ?
+                    <img className = "card__image-wraper"src = {SingleProduct.image} alt = "product"/>
+                  : <img src = 'https://dummyimage.com/300x379.15/ffffff/f7f7f7.png&text=/' alt = "holder"/>
+                 }
                     <div className = "product__info">
                         <p className = "product__info__tittle">{SingleProduct.name} </p>
                         {SingleProduct.on_sale ?
@@ -93,6 +89,7 @@ const Product = () => {
                     </div>                   
                 </div>
             :  <Loading/>}  
+
         </section>  
     )   
 }

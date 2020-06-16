@@ -1,13 +1,17 @@
 import React from 'react';
 import { Route, Switch} from 'react-router-dom';
-import Home from "../pages/Home/index"
-import Product from "../pages/Product/Product"
-
+import {Provider} from "react-redux";
+import {store,persistor} from "../store/store" 
+import {PersistGate} from 'redux-persist/integration/react'
+import Dale  from './root'
 
 const Routes = () => (
      <Switch >
-         <Route exact path = "/" component = {Home}/>
-         <Route  path = "/product/:style" component = {Product}/>
+     <Provider store = {store}>       
+      <PersistGate loading = {null} persistor ={persistor}>
+                <Route path = "/" component = {Dale}/>
+     </PersistGate>
+    </Provider>          
      </Switch>
 )
 export default Routes;

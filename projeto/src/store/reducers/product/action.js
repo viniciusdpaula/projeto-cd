@@ -1,4 +1,3 @@
-import {getUrl} from '../../../utils/getUrl'
 
 export const  setSize  = (size) => { 
     return { 
@@ -19,7 +18,6 @@ export function addtoCart(SingleProduct,size,amount) {
     }
 }
 export function setUrl(location) { 
-    console.log(location,'location')
    return { 
         type:'SET_URL',
         action:location

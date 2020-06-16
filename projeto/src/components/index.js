@@ -5,7 +5,7 @@ import Overlay from './Overlay/Overlay'
 import Search from './Search/Search'
 import Searchitem from './Searchitem/Searchitem'
 import Sizebutton from './Sizebutton/Sizebutton'
-
+import Topbar from './Topbar/Topbar'
 export { 
     Card,
     Loading,
@@ -13,5 +13,6 @@ export {
     Overlay,
     Search,
     Searchitem,
-    Sizebutton
+    Sizebutton,
+    Topbar
 }

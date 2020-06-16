@@ -19,9 +19,11 @@ export const cart_format = (cart,item) => {
     return cart
 }
 const floatFormat = (string) => { 
+    if (string !== undefined){
     string = string.replace(",",".")
     string = string.split("R$",);
     return  parseFloat(string[1]).toFixed(2)
+}
 }
 export const calc_price = (cart) => { 
    if (cart !== undefined) { 
@@ -34,7 +36,7 @@ export const calc_price = (cart) => {
    }
 }
 export const calc_qt = (cart) => { 
-   if (cart != undefined) { 
+   if (cart !== undefined) { 
        let quantity = cart.reduce((total,item) => {   
            var value  = item.item_amount 
         return (total + value)

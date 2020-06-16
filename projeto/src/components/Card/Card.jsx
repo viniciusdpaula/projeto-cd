@@ -4,11 +4,17 @@ import { Link } from 'react-router-dom';
 import CardFooter from './CardFooter'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faCartPlus} from "@fortawesome/free-solid-svg-icons"
-const Card = ({product}) => {
+import {getProduct} from '../../store/reducers/product/action'
+import  {useDispatch} from 'react-redux'
+const Card = ({product,value}) => {
+  const dispatch = useDispatch()
+  function handleChange(value) { 
+    dispatch(getProduct(value))
+  }
   return (        
        <div className = "card">
           <div className = "card__image">
-             <Link to = {`/product/${product.code_color}`} >
+             <Link to = {`/product/${product.code_color}`}  onClick = {() => handleChange(value)}>
               {product.image.length > 0 ?
                 <img className = "card__image-wraper"src = {product.image} alt = "product"/>
                 : <img src = 'https://dummyimage.com/300x379.15/ffffff/f7f7f7.png&text=/' alt = "holder"/>

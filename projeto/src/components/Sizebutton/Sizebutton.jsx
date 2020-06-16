@@ -1,5 +1,4 @@
-import React, {useState, useEffect } from 'react'
-//CSS EM PRODUCT.SCSS
+import React, {useState } from 'react'
 import {setSize} from '../../store/reducers/product/action'
 import {useSelector,useDispatch} from 'react-redux'
 const Sizebuttom = () => {
@@ -9,7 +8,7 @@ const Sizebuttom = () => {
     function handleChange(value) { 
         const aux = [ ]
         for (var i in sizes) { 
-            if (i == value ) { 
+            if (i === value ) { 
                 aux[i] = true; 
             }    
             else aux[i] = false
@@ -20,7 +19,7 @@ const Sizebuttom = () => {
     }    
     return( 
         <div className = "product__sizes">
-        {sizes!= undefined   &&  
+        {sizes !== undefined   &&  
         sizes.map((size,index) => {
         return (
             <button 

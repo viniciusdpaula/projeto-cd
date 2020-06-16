@@ -27,7 +27,7 @@ export function cartReducer(state  = INITIAL_STATE,action) {
             return { 
                 ...state,
                 cart:cart_aux, 
-                subtotal:calc_price(cart_aux),
+                subtotal:calc_price(state.cart),
                 quantity:calc_qt(state.cart)
             }                       
         case 'CHANGE_AMOUNT':
@@ -48,6 +48,7 @@ export function cartReducer(state  = INITIAL_STATE,action) {
             }    
         case 'RESET_CART':
             return {
+                ...state,
                 show: false,
                 cart:[],
                 subtotal:0,
