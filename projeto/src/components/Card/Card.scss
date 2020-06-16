@@ -17,14 +17,14 @@
         height: auto;
         margin: 0 auto;
         background-color: transparent;
-        i{ 
+        &__icon{ 
             top: 10px;
             right: 10px;    
             position: absolute;
             color: transparent;
             font-size: 50px;
         }
-        i:hover { 
+        &__icon:hover { 
             color: black;
             transition-duration:1.5s;
             cursor: pointer;

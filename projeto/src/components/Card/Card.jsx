@@ -2,6 +2,8 @@ import React from 'react';
 import './Card.scss'
 import { Link } from 'react-router-dom';
 import CardFooter from './CardFooter'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faCartPlus} from "@fortawesome/free-solid-svg-icons"
 const Card = ({product}) => {
   return (        
        <div className = "card">
@@ -11,6 +13,7 @@ const Card = ({product}) => {
                 <img className = "card__image-wraper"src = {product.image} alt = "product"/>
                 : <img src = 'https://dummyimage.com/300x379.15/ffffff/f7f7f7.png&text=/' alt = "holder"/>
                 }
+                <FontAwesomeIcon className = "card__image__icon" icon ={faCartPlus}/>  
               </Link>  
               {product.discount_percentage !== "" && 
               <div className = "card__discount">
@@ -18,7 +21,6 @@ const Card = ({product}) => {
               </div>
               }
               <Link to = {`/product/${product.code_color}`}>
-                <i className="fa fa-cart-plus"/> 
               </Link>
               <CardFooter 
                   name ={product.name} 

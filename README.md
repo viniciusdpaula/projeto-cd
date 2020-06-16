@@ -1,2 +1,0 @@
-# projeto-cd
-Projeto Codenation

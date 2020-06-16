@@ -59,7 +59,7 @@
         &--finish {
             position: fixed;
             bottom: 0;
-            width: -moz-available;
+            width: 450px;
             background:black;
             color:white;
             height: 6vh;
@@ -67,15 +67,22 @@
             text-align: center;
             display: flex;
             justify-content: center;
-            align-items: center;
-        }
+            align-items: center;    
+         }
     }    
 }
 
-
-
-@media screen and (max-width: 700) { 
-    .cart__buttons--finish { 
-        width: auto;
+@media screen and (max-width : 700px) { 
+    .sidebar{ 
+        width: 100%;
+        margin: auto;
+        &__content { 
+            width: 100%;
+        }
     }
-}
+    .cart__buttons--finish { 
+        width: 100%;
+    }
+  }
+
+

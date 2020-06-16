@@ -78,12 +78,3 @@ body {
   }
 
 }
-@media screen and (max-width : 700px) { 
-  .sidebar{ 
-      width: 100%;
-      margin: auto;
-      &__content { 
-          width: 100%;
-      }
-  }
-}
